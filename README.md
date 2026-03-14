@@ -3,7 +3,6 @@
 A progressive web app that guides drone students through every phase of a mission — from airspace verification to post-flight logging — built for Part 107 and TRUST recreational flight training programs.
 
 **Live app:** [https://aguirretech.github.io/drone-checklist/](https://aguirretech.github.io/drone-checklist/)
-*(Replace with your actual GitHub Pages URL)*
 
 ---
 
