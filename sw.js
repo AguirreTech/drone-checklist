@@ -1,7 +1,7 @@
-// AguirreTech Drone Mission Checklist — Service Worker
+// AguirreTech Drone Mission Checklist — Service Worker v2.0
 // Caches the app for full offline use
 
-const CACHE_NAME = 'aguirretech-checklist-v1';
+const CACHE_NAME = 'aguirretech-checklist-v2';
 
 const ASSETS_TO_CACHE = [
   './',
@@ -17,10 +17,8 @@ const ASSETS_TO_CACHE = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      // Cache local assets reliably; external fonts/libs best-effort
       return cache.addAll(['./index.html', './manifest.json', './icon-192.png', './icon-512.png'])
         .then(() => {
-          // Best-effort cache for external resources
           return Promise.allSettled(
             ['https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap',
              'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js']
@@ -48,7 +46,6 @@ self.addEventListener('fetch', event => {
   const isLocal = url.origin === self.location.origin;
 
   if (isLocal) {
-    // Cache-first for app files
     event.respondWith(
       caches.match(event.request).then(cached => {
         if (cached) return cached;
@@ -62,7 +59,6 @@ self.addEventListener('fetch', event => {
       })
     );
   } else {
-    // Network-first for external (fonts, CDN), fall back to cache
     event.respondWith(
       fetch(event.request)
         .then(response => {

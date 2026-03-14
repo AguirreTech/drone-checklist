@@ -18,8 +18,8 @@
   :root {
     --bg: #0a0e1a; --panel: #0f1628; --panel2: #131c35; --border: #1e2d50;
     --accent: #00c8ff; --accent2: #ff6b35; --accent3: #39ff14;
-    --text: #cdd9f0; --muted: #5a6a8a; --warning: #ffd700;
-    --danger: #ff4444; --success: #39ff14;
+    --text: #cdd9f0; --muted: #7285a8; --warning: #ffd700;
+    --danger: #ff4444; --success: #39ff14; --orange: #ff6b35;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -88,9 +88,9 @@
     outline:none; transition:border-color 0.2s; width:100%;
   }
   .info-field input:focus, .info-field select:focus, .info-field textarea:focus { border-color:var(--accent); box-shadow:0 0 8px rgba(0,200,255,0.15); }
-  .info-field input:focus-visible, .info-field select:focus-visible, .info-field textarea:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 1px !important; }
-  .log-search:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 1px !important; }
-  .modal input:focus-visible { outline: 2px solid var(--accent) !important; }
+  .info-field input:focus-visible, .info-field select:focus-visible, .info-field textarea:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+  .log-search:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+  .modal input:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
   .info-field select option { background:var(--panel2); }
   .info-field textarea { resize:vertical; min-height:72px; font-size:0.8rem; line-height:1.5; }
   /* ── DRONEZONE BANNER ── */
@@ -566,7 +566,7 @@
     transform: translateX(14px); background: var(--accent);
   }
   .a11y-switch:hover .a11y-switch-track { border-color: var(--accent); }
-  .a11y-switch:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 3px !important; border-radius: 9px; }
+  .a11y-switch:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 3px !important; }
 
   /* Font size button group */
   .a11y-font-wrap { display: flex; align-items: center; }
@@ -580,7 +580,7 @@
   }
   .a11y-btn:last-child { border-right: none; }
   .a11y-btn:hover { color: var(--accent); background: rgba(0,200,255,0.08); }
-  .a11y-btn:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: -2px !important; }
+  .a11y-btn:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
   .a11y-btn.active { color: var(--accent); background: rgba(0,200,255,0.15); }
   .a11y-icon { font-size: 0.82rem; line-height: 1; font-weight: 600; }
   .a11y-btn-label { font-size: 0.45rem; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; color: inherit; }
@@ -590,13 +590,19 @@
 
   /* ── GLOBAL FOCUS INDICATORS ── */
   *:focus-visible {
-    outline: 2px solid var(--accent) !important;
+    outline: 3px solid var(--accent) !important;
     outline-offset: 2px !important;
-    box-shadow: 0 0 0 4px rgba(0,200,255,0.15) !important;
+    box-shadow: 0 0 0 5px rgba(0,200,255,0.12) !important;
   }
-  .check-item:focus-visible { outline-offset: -2px !important; }
-  .cl-header:focus-visible { outline-offset: -2px !important; }
-  .rpic-ack-row:focus-visible { outline-offset: -2px !important; }
+  .check-item:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+  .scl-item:focus-visible { outline: 3px solid #1f618d !important; outline-offset: 2px !important; }
+  .scl-header:focus-visible { outline: 3px solid #ffffff !important; outline-offset: 2px !important; }
+  .sh-tip-btn:focus-visible { outline: 3px solid #1f618d !important; outline-offset: 2px !important; }
+  .scl-why-btn:focus-visible { outline: 3px solid #ffffff !important; outline-offset: 2px !important; }
+  .scl-why-item-btn:focus-visible { outline: 3px solid #1f618d !important; outline-offset: 2px !important; }
+  .sess-tab:focus-visible { outline: 3px solid #1f618d !important; outline-offset: 2px !important; }
+  .cl-header:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+  .rpic-ack-row:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 0px !important; }
 
   /* ── REDUCED MOTION ── */
   body.reduced-motion *,
@@ -640,19 +646,19 @@
 
   /* Tooltip icon as button (a11y) */
   .tooltip-icon { background: transparent; cursor: help; }
-  .tooltip-icon:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px !important; }
+  .tooltip-icon:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
 
   /* Log entry keyboard focus */
-  .log-entry-header:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: -2px !important; }
+  .log-entry-header:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
 
   /* Modal focus trap visual */
   .modal:focus { outline: none; }
 
   /* Action buttons focus */
-  .btn:focus-visible { outline: 2px solid currentColor !important; outline-offset: 3px !important; }
-  .icon-btn:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 1px !important; }
-  .a11y-btn:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px !important; }
-  .tab-btn:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: -3px !important; }
+  .btn:focus-visible { outline: 3px solid currentColor !important; outline-offset: 3px !important; }
+  .icon-btn:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+  .a11y-btn:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+  .tab-btn:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
 
   /* High contrast additions */
   body.high-contrast .logo-img { filter: brightness(0) invert(1); }
@@ -797,6 +803,311 @@
   .brief-field { display:flex; flex-direction:column; gap:2px; padding:6px 0; border-bottom:1px solid #eee; }
   .brief-label { font-family:'Share Tech Mono',monospace; font-size:0.58rem; color:#666; letter-spacing:1.5px; text-transform:uppercase; }
   .brief-val   { font-size:0.85rem; color:#111; font-weight:500; }
+
+  /* ── VERSION BADGE ── */
+  .version-badge {
+    font-family:'Share Tech Mono',monospace; font-size:0.55rem; color:var(--muted);
+    letter-spacing:1.5px; padding:2px 7px; border:1px solid var(--border);
+    position:fixed; bottom:10px; left:12px; z-index:50; background:var(--bg);
+    opacity:0.7;
+  }
+  @media print { .version-badge { display:none; } }
+
+  /* ── SAVE AS PDF BUTTON ── */
+  .btn-pdf { color:#9b59b6; border-color:#9b59b6; }
+  .btn-pdf:hover { background:rgba(155,89,182,0.1); box-shadow:0 0 15px rgba(155,89,182,0.2); }
+  @media print { .btn-pdf { display:none; } }
+
+  /* ── BASIC STUDENT MODE ── */
+  .student-mode-bar {
+    background: rgba(57,255,20,0.05); border:1px solid rgba(57,255,20,0.25);
+    border-left:3px solid var(--accent3); padding:10px 16px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; margin-bottom:1rem; flex-wrap:wrap;
+  }
+  .student-mode-label {
+    font-family:'Rajdhani',sans-serif; font-size:0.75rem; font-weight:700;
+    letter-spacing:2px; color:var(--accent3); text-transform:uppercase;
+  }
+  .student-mode-desc {
+    font-family:'Exo 2',sans-serif; font-size:0.78rem; color:var(--muted);
+    flex:1; min-width:150px;
+  }
+  .student-toggle-wrap { display:flex; align-items:center; gap:10px; }
+  .student-toggle-label { font-family:'Share Tech Mono',monospace; font-size:0.65rem; color:var(--muted); letter-spacing:1px; }
+  .student-switch {
+    position:relative; width:48px; height:26px; cursor:pointer;
+    background:var(--border); border:1px solid var(--muted);
+    transition:all 0.25s;
+  }
+  .student-switch.on { background:rgba(57,255,20,0.2); border-color:var(--accent3); }
+  .student-switch::after {
+    content:''; position:absolute; top:3px; left:3px;
+    width:18px; height:18px; background:var(--muted); transition:all 0.25s;
+  }
+  .student-switch.on::after { left:25px; background:var(--accent3); }
+  /* hide/show items based on student mode */
+  body.student-mode .student-hide { display:none !important; }
+  body.student-mode .student-show { display:flex !important; }
+  .student-show { display:none !important; }
+  /* Student banner in print */
+  .student-print-banner { display:none; }
+  @media print {
+    body.student-mode .student-print-banner { display:block; background:#e8fff0 !important; border:1px solid #006400 !important; color:#004d00 !important; padding:6px 10px; font-size:8pt; margin-bottom:10pt; font-family:'Exo 2',sans-serif; }
+  }
+
+  /* ── GO / NO-GO GATE ── */
+  .gonogo-gate {
+    background:rgba(255,68,68,0.07); border:1px solid rgba(255,68,68,0.3);
+    border-left:3px solid var(--danger); padding:10px 14px;
+    margin-bottom:0; display:none;
+  }
+  .gonogo-gate.show { display:block; }
+  .gonogo-gate-title {
+    font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:700;
+    letter-spacing:2px; color:var(--danger); text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .gonogo-gate-msg { font-size:0.8rem; color:var(--text); line-height:1.5; }
+  .gonogo-gate-msg strong { color:var(--warning); }
+  .gonogo-ok { border-color:rgba(57,255,20,0.3); background:rgba(57,255,20,0.05); }
+  .gonogo-ok .gonogo-gate-title { color:var(--accent3); }
+
+  /* ── SESSION TABS ── */
+  .sess-tabs {
+    display:flex; align-items:center; gap:0; border-bottom:2px solid #2c3e50;
+    margin-bottom:12px; flex-wrap:wrap; background:#fff;
+  }
+  .sess-tab {
+    font-family:'Exo 2',sans-serif; font-size:0.8rem; font-weight:600;
+    letter-spacing:1px; padding:8px 18px; border:none; border-bottom:3px solid transparent;
+    background:transparent; color:#606060; cursor:pointer; transition:all 0.2s;
+    margin-bottom:-2px;
+  }
+  .sess-tab:hover { color:#2c3e50; }
+  .sess-tab.active { color:#2c3e50; border-bottom-color:#2c3e50; background:#f0f3f7; }
+  .sess-tab.complete { color:#166534; border-bottom-color:#166534; }
+  .sess-new-btn {
+    margin-left:auto; font-family:'Exo 2',sans-serif; font-size:0.75rem; font-weight:600;
+    padding:6px 14px; border:1.5px dashed #1f618d; background:transparent;
+    color:#1f618d; cursor:pointer; transition:all 0.2s;
+  }
+  .sess-new-btn:hover { background:#1f618d; color:#fff; }
+  .sess-new-btn:disabled { opacity:0.35; cursor:not-allowed; }
+
+  /* ── FIELD LABEL ROW + TIP BUTTON ── */
+  .sh-label-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:3px; }
+  .sh-section-label { font-size:0.6rem; color:#2c3e50; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; margin-bottom:2px; margin-top:2px; }
+  .sh-tip-btn {
+    font-size:0.6rem; color:#1f618d; border:1px solid #1f618d;
+    background:transparent; padding:1px 5px; cursor:pointer; letter-spacing:0;
+    flex-shrink:0; line-height:1.4;
+  }
+  .sh-tip-btn:hover { background:#1f618d; color:#fff; }
+  .sh-tip-box {
+    display:none; font-size:0.72rem; color:#1a5276; background:#eaf3fb;
+    border-left:3px solid #1f618d; padding:7px 9px; margin-top:4px;
+    line-height:1.6;
+  }
+  .sh-tip-box.open { display:block; }
+
+  /* ── SESSION CARD ── */
+  .session-card { display:none; }
+  .session-card.active { display:block; }
+
+  /* ── PRINT: student mode ── */
+  @media print {
+    body.student-mode .sess-tabs,
+    body.student-mode .student-actions,
+    body.student-mode .student-progress,
+    body.student-mode .scl-why-box,
+    body.student-mode .scl-item-why,
+    body.student-mode .scl-why-btn,
+    body.student-mode .scl-why-item-btn,
+    body.student-mode .sh-tip-btn,
+    body.student-mode .sh-tip-box { display:none !important; }
+    body.student-mode .session-card { display:block !important; page-break-after:always; }
+    body.student-mode .session-card:last-of-type { page-break-after:auto; }
+    body.student-mode .scl-section { page-break-inside:avoid; }
+    body.student-mode .scl-header { background:#2c3e50 !important; color:#fff !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    body.student-mode .scl-body { display:block !important; }
+    body.student-mode main { padding:0 !important; }
+    body.student-mode header,
+    body.student-mode .tab-bar,
+    body.student-mode .student-mode-bar { display:none !important; }
+    body.student-mode .student-cl { display:block !important; }
+    body.student-mode .standard-cl { display:none !important; }
+  }
+
+  /* ══════════════════════════════════════════════════════
+     BASIC STUDENT MODE — light theme, brandless
+  ══════════════════════════════════════════════════════ */
+  body.student-mode #page-checklist { background:#f4f6f9; }
+  body.student-mode main { background:#f4f6f9; }
+
+  /* Student header card */
+  .student-header-card {
+    display:none;
+    background:#fff; border:2px solid #2c3e50; padding:16px 18px;
+    margin-bottom:14px; font-family:'Exo 2',sans-serif;
+  }
+  body.student-mode .student-header-card { display:block; }
+  body.student-mode .card.mission-brief-card { display:none; }
+  body.student-mode .overall-progress { display:none; }
+
+  .sh-title {
+    font-size:1rem; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+    color:#2c3e50; text-align:center; border-bottom:2px solid #2c3e50;
+    padding-bottom:8px; margin-bottom:12px;
+  }
+  .sh-row {
+    display:grid; gap:6px 16px; margin-bottom:8px;
+  }
+  .sh-row-3 { grid-template-columns:1fr 1fr 1fr; }
+  .sh-row-4 { grid-template-columns:repeat(4,1fr); }
+  .sh-row-2 { grid-template-columns:1fr 1fr; }
+  .sh-row-1 { grid-template-columns:1fr; }
+  .sh-field { display:flex; flex-direction:column; gap:2px; }
+  .sh-label {
+    font-family:'Share Tech Mono',monospace; font-size:0.58rem; color:#555;
+    letter-spacing:1.5px; text-transform:uppercase;
+  }
+  .sh-input {
+    border:none; border-bottom:1.5px solid #2c3e50; background:transparent;
+    font-family:'Exo 2',sans-serif; font-size:0.88rem; color:#111;
+    padding:3px 2px; outline:none; width:100%;
+  }
+  .sh-input:focus { border-bottom-color:#2980b9; }
+  .sh-divider { border:none; border-top:1px solid #ccc; margin:10px 0; }
+
+  /* Student checklist sections */
+  .student-cl { display:none; }
+  body.student-mode .student-cl { display:block; }
+  body.student-mode .standard-cl { display:none; }
+
+  .scl-section {
+    background:#fff; border:1.5px solid #2c3e50;
+    margin-bottom:10px; font-family:'Exo 2',sans-serif;
+  }
+  .scl-header {
+    padding:10px 14px; display:flex; align-items:center; justify-content:space-between;
+    cursor:pointer; user-select:none; background:#2c3e50; color:#fff;
+  }
+  .scl-header:hover { background:#34495e; }
+  .scl-title-row { display:flex; align-items:center; gap:10px; }
+  .scl-icon { font-size:1rem; }
+  .scl-title {
+    font-size:0.85rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  }
+  .scl-why-btn {
+    font-family:'Share Tech Mono',monospace; font-size:0.6rem; letter-spacing:1px;
+    border:1px solid rgba(255,255,255,0.4); color:rgba(255,255,255,0.8);
+    background:transparent; padding:2px 8px; cursor:pointer; flex-shrink:0;
+  }
+  .scl-why-btn:hover { background:rgba(255,255,255,0.15); color:#fff; }
+  .scl-progress-wrap { display:flex; align-items:center; gap:8px; }
+  .scl-count { font-family:'Share Tech Mono',monospace; font-size:0.7rem; color:rgba(255,255,255,0.8); }
+  .scl-mini-bar { width:50px; height:4px; background:rgba(255,255,255,0.2); overflow:hidden; }
+  .scl-mini-fill { height:100%; background:#27ae60; transition:width 0.3s ease; }
+
+  .scl-why-box {
+    display:none; background:#eaf3fb; border-bottom:1px solid #aed6f1;
+    padding:10px 14px; font-size:0.8rem; color:#1a5276; line-height:1.6;
+  }
+  .scl-why-box.open { display:block; }
+  .scl-why-title { font-weight:700; margin-bottom:4px; font-size:0.75rem; letter-spacing:1px; text-transform:uppercase; }
+
+  .scl-body { border-top:none; }
+
+  .scl-item {
+    display:flex; align-items:flex-start; padding:10px 14px;
+    border-bottom:1px solid #e8ecf0; gap:12px; cursor:pointer;
+    transition:background 0.15s;
+  }
+  .scl-item:last-child { border-bottom:none; }
+  .scl-item:hover { background:#f8f9fa; }
+  .scl-item.checked { background:#f0fff4; }
+  .scl-item.checked .scl-item-label { color:#999; text-decoration:line-through; }
+
+  .scl-check-box {
+    width:20px; height:20px; border:2px solid #2c3e50; background:#fff;
+    flex-shrink:0; position:relative; transition:all 0.2s; margin-top:1px;
+  }
+  .scl-item.checked .scl-check-box {
+    background:#166534; border-color:#166534;
+  }
+  .scl-item.checked .scl-check-box::after {
+    content:'✓'; position:absolute; inset:0; display:flex; align-items:center;
+    justify-content:center; font-size:12px; color:#fff; font-weight:bold;
+  }
+
+  .scl-item-content { flex:1; }
+  .scl-item-label { font-size:0.88rem; color:#2c3e50; line-height:1.4; }
+  .scl-item-why {
+    display:none; font-size:0.75rem; color:#555; margin-top:5px;
+    padding:6px 8px; background:#f4f6f9; border-left:3px solid #2980b9;
+    line-height:1.5;
+  }
+  .scl-item-why.open { display:block; }
+  .scl-why-item-btn {
+    font-family:'Share Tech Mono',monospace; font-size:0.55rem; letter-spacing:1px;
+    border:1px solid #606060; color:#606060; background:transparent; padding:1px 6px;
+    cursor:pointer; margin-left:8px; vertical-align:middle; flex-shrink:0;
+  }
+  .scl-why-item-btn:hover { border-color:#1f618d; color:#1f618d; }
+
+  /* Student progress bar */
+  .student-progress {
+    display:none; background:#fff; border:1.5px solid #2c3e50;
+    padding:10px 14px; margin-bottom:10px;
+    align-items:center; gap:16px;
+  }
+  body.student-mode .student-progress { display:flex; }
+  .sp-label { font-family:'Share Tech Mono',monospace; font-size:0.65rem; color:#555; letter-spacing:2px; text-transform:uppercase; white-space:nowrap; }
+  .sp-bar-wrap { flex:1; height:8px; background:#e0e4ea; overflow:hidden; }
+  .sp-bar-fill { height:100%; background:#27ae60; transition:width 0.4s ease; }
+  .sp-pct { font-family:'Share Tech Mono',monospace; font-size:1rem; color:#2c3e50; white-space:nowrap; min-width:44px; text-align:right; }
+
+  /* Student complete banner */
+  .student-complete {
+    display:none; background:#d5f5e3; border:2px solid #166534;
+    padding:14px; text-align:center; margin-bottom:10px;
+  }
+  .student-complete.show { display:block; }
+  .student-complete-title { font-size:1rem; font-weight:700; color:#155e35; letter-spacing:2px; text-transform:uppercase; }
+
+  /* Student actions */
+  .student-actions { display:none; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  body.student-mode .student-actions { display:flex; }
+  body.student-mode .actions-bar { display:none; }
+
+  .btn-student { font-family:'Exo 2',sans-serif; font-size:0.85rem; font-weight:600; padding:10px 20px; border:2px solid #2c3e50; background:transparent; color:#2c3e50; cursor:pointer; transition:all 0.2s; }
+  .btn-student:hover { background:#2c3e50; color:#fff; }
+  .btn-student-pdf { border-color:#8e44ad; color:#8e44ad; }
+  .btn-student-pdf:hover { background:#8e44ad; color:#fff; }
+  .btn-student-reset { border-color:#c0392b; color:#c0392b; }
+  .btn-student-reset:hover { background:#c0392b; color:#fff; }
+
+  /* Print: student mode */
+  @media print {
+    body.student-mode header,
+    body.student-mode .tab-bar,
+    body.student-mode .student-mode-bar,
+    body.student-mode .student-actions,
+    body.student-mode .student-progress,
+    body.student-mode .scl-why-box,
+    body.student-mode .scl-item-why,
+    body.student-mode .scl-why-btn,
+    body.student-mode .scl-why-item-btn { display:none !important; }
+    body.student-mode .student-cl { display:block !important; }
+    body.student-mode .standard-cl { display:none !important; }
+    body.student-mode .scl-header { background:#2c3e50 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    body.student-mode main { padding:0 !important; }
+  }
+  @media (max-width:600px) {
+    .sh-row-3 { grid-template-columns:1fr 1fr; }
+    .sh-row-4 { grid-template-columns:1fr 1fr; }
+  }
   @media print {
     #briefing-actions { display:none !important; }
   }
@@ -873,7 +1184,25 @@
 </div>
 <main id="main-content" aria-label="Mission Checklist">
 
-  <div class="card">
+  <!-- BASIC STUDENT MODE BAR -->
+  <div class="student-mode-bar" id="student-mode-bar" role="region" aria-label="Basic Student Mode toggle">
+    <div>
+      <div class="student-mode-label">🎓 Basic Student Mode</div>
+      <div class="student-mode-desc">Workforce-prep checklist for student pilots. Matches the class handout. Tap ? on any field to learn what it means and where to find the data.</div>
+    </div>
+    <div class="student-toggle-wrap">
+      <span class="student-toggle-label" id="student-toggle-status">OFF</span>
+      <div class="student-switch" id="student-switch" role="switch" aria-checked="false" tabindex="0"
+        onclick="toggleStudentMode()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleStudentMode()}"
+        aria-label="Toggle Basic Student Mode"></div>
+    </div>
+  </div>
+  <div class="student-print-banner" aria-hidden="true">🎓 BASIC STUDENT MODE — Student Pilot Checklist (Instructor supervising)</div>
+
+  <!-- STANDARD CHECKLIST WRAPPER -->
+  <div class="standard-cl" id="standard-cl">
+
+  <div class="card mission-brief-card">
     <span class="card-label">MISSION BRIEF</span>
     <div class="section-label">Pilot & Mission Information</div>
     <div class="info-grid">
@@ -1122,12 +1451,12 @@
       <div class="tooltip-box" id="tip-setup"><div class="tt-title">Mission Setup</div><div class="tt-body">Complete the mission form and verify all authorization before touching any equipment. These items ensure you are legally cleared and situationally aware before the flight begins.<ul class="tt-list"><li>Pilot info, date, location, and flight type must be filled in the form above</li><li>Use the 🌤 Fetch button to auto-fill weather and airspace data</li><li>Verify your LAANC authorization and enter your confirmation number if applicable</li><li>Mission Insurance should be toggled on if flying commercially or over people/property</li></ul><div class="tt-tags"><span class="tt-tag tt-critical">COMPLETE BEFORE EQUIPMENT CHECK</span><span class="tt-tag tt-safety">REGULATORY COMPLIANCE</span></div></div></div>
     </div>
     <div class="cl-body" id="body-setup" style="display:block">
-      <div class="check-item" data-item="ci1" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Mission form completed (pilot, date, location, flight type)</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci2" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Weather and wind conditions fetched and reviewed</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci3" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Airspace class auto-filled and verified</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci4" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">LAANC authorization obtained and confirmation entered (if required)</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci5" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Mission description completed</span><span class="item-tag tag-standard">STANDARD</span></div>
-      <div class="check-item" data-item="ci6" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Mission insurance confirmed (if applicable)</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci1" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Mission form completed (pilot, date, location, flight type)"><div class="check-box"></div><span class="item-label">Mission form completed (pilot, date, location, flight type)</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci2" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Weather and wind conditions fetched and reviewed"><div class="check-box"></div><span class="item-label">Weather and wind conditions fetched and reviewed</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci3" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Airspace class auto-filled and verified"><div class="check-box"></div><span class="item-label">Airspace class auto-filled and verified</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci4" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="LAANC authorization obtained and confirmation entered (if required)"><div class="check-box"></div><span class="item-label">LAANC authorization obtained and confirmation entered (if required)</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci5" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Mission description completed"><div class="check-box"></div><span class="item-label">Mission description completed</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci6" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Mission insurance confirmed (if applicable)"><div class="check-box"></div><span class="item-label">Mission insurance confirmed (if applicable)</span><span class="item-tag tag-standard">STANDARD</span></div>
     </div>
   </div>
 
@@ -1135,20 +1464,25 @@
   <div class="cl-section">
     <div class="cl-header" onclick="toggleSection('crew')" role="button" tabindex="0" aria-expanded="false" aria-controls="body-crew" aria-label="Toggle Crew & Equipment PPE, Gear & Hardware Check section" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSection('crew')}" onmouseenter="showTip('tip-crew', this)" onmouseleave="hideTip('tip-crew')">
       <div class="cl-title-row"><div class="cl-icon">🦺</div><div><div class="cl-title">Crew & Equipment</div><div class="cl-meta">PPE, Gear & Hardware Check</div></div></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="cl-progress"><span class="cl-count" id="cnt-crew">0/10</span><div class="mini-bar"><div class="mini-bar-fill" id="bar-crew" style="width:0%"></div></div></div><button class="tooltip-icon" aria-label="Show section help" tabindex="0" onclick="event.stopPropagation();toggleTipFromBtn(this)" onfocus="openTipFromBtn(this)" onblur="closeTipFromBtn(this)">?</button></div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="cl-progress"><span class="cl-count" id="cnt-crew">0/15</span><div class="mini-bar"><div class="mini-bar-fill" id="bar-crew" style="width:0%"></div></div></div><button class="tooltip-icon" aria-label="Show section help" tabindex="0" onclick="event.stopPropagation();toggleTipFromBtn(this)" onfocus="openTipFromBtn(this)" onblur="closeTipFromBtn(this)">?</button></div>
       <div class="tooltip-box" id="tip-crew"><div class="tt-title">Crew & Equipment Check</div><div class="tt-body">Suit up and verify all hardware before approaching the launch area. A complete equipment check prevents the most common causes of accidents and equipment loss.<ul class="tt-list"><li>High-visibility vest must be worn at all outdoor flight sites</li><li>Hard hat required near structures, rooftops, or overhead hazards</li><li>Drone and controller batteries should be at 80% or higher for safe flight</li><li>Confirm controller is paired and responding before approaching the launch zone</li><li>Inspect props, arms, and gimbal guard visually — look for cracks or loose fittings</li></ul><div class="tt-tags"><span class="tt-tag tt-safety">SAFETY REQUIREMENT</span><span class="tt-tag tt-critical">CHECK BEFORE APPROACHING SITE</span></div></div></div>
     </div>
     <div class="cl-body" id="body-crew">
-      <div class="check-item" data-item="ci7" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Safety vest on</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci8" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Hard hat on (if required for site)</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci9" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Closed-toe shoes worn</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci10" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Weather protection ready (hat, sunscreen, rain gear)</span><span class="item-tag tag-standard">COMFORT</span></div>
-      <div class="check-item" data-item="ci11" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Water / hydration available</span><span class="item-tag tag-standard">COMFORT</span></div>
-      <div class="check-item" data-item="ci12" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Drone battery charged (≥80%)</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci13" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Controller battery charged (≥80%)</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci14" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Controller powered on and linked to drone</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci15" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Props, arms, and gimbal inspected — no damage</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci16" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">GPS signal acquired and satellites locked</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci7" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Safety vest on"><div class="check-box"></div><span class="item-label">Safety vest on</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci8" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Hard hat on (if required for site)"><div class="check-box"></div><span class="item-label">Hard hat on (if required for site)</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci9" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Closed-toe shoes worn"><div class="check-box"></div><span class="item-label">Closed-toe shoes worn</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci10" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Weather protection ready (hat, sunscreen, rain gear)"><div class="check-box"></div><span class="item-label">Weather protection ready (hat, sunscreen, rain gear)</span><span class="item-tag tag-standard">COMFORT</span></div>
+      <div class="check-item" data-item="ci11" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Water / hydration available"><div class="check-box"></div><span class="item-label">Water / hydration available</span><span class="item-tag tag-standard">COMFORT</span></div>
+      <div class="check-item" data-item="ci12" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Drone battery charged (≥80%)"><div class="check-box"></div><span class="item-label">Drone battery charged (≥80%)</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci13" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Controller battery charged (≥80%)"><div class="check-box"></div><span class="item-label">Controller battery charged (≥80%)</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci14" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Controller powered on and linked to drone"><div class="check-box"></div><span class="item-label">Controller powered on and linked to drone</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci15" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Props, arms, and gimbal inspected — no damage"><div class="check-box"></div><span class="item-label">Props, arms, and gimbal inspected — no damage</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci15b" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Gimbal guard removed before flight"><div class="check-box"></div><span class="item-label">Gimbal guard removed before flight</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci15c" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Prop guards installed or removed per mission plan"><div class="check-box"></div><span class="item-label">Prop guards installed or removed per mission plan</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci16" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="GPS signal acquired and satellites locked"><div class="check-box"></div><span class="item-label">GPS signal acquired and satellites locked</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item student-hide" data-item="ci16b" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Remote ID broadcasting confirmed active"><div class="check-box"></div><span class="item-label">Remote ID broadcasting confirmed active</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item student-hide" data-item="ci16c" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="DJI Fly app version and firmware checked — no pending updates"><div class="check-box"></div><span class="item-label">DJI Fly app version and firmware checked — no pending updates</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci16d" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Home point confirmed on controller display"><div class="check-box"></div><span class="item-label">Home point confirmed on controller display</span><span class="item-tag tag-safety">SAFETY</span></div>
     </div>
   </div>
 
@@ -1156,7 +1490,7 @@
   <div class="cl-section">
     <div class="cl-header" onclick="toggleSection('ack')" role="button" tabindex="0" aria-expanded="false" aria-controls="body-ack" aria-label="Toggle Pre-Flight Acknowledgments Rules, Crew Briefing & Go/No-Go section" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSection('ack')}" onmouseenter="showTip('tip-ack', this)" onmouseleave="hideTip('tip-ack')">
       <div class="cl-title-row"><div class="cl-icon">✅</div><div><div class="cl-title">Pre-Flight Acknowledgments</div><div class="cl-meta">Rules, Crew Briefing & Go/No-Go</div></div></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="cl-progress"><span class="cl-count" id="cnt-ack">0/10</span><div class="mini-bar"><div class="mini-bar-fill" id="bar-ack" style="width:0%"></div></div></div><button class="tooltip-icon" aria-label="Show section help" tabindex="0" onclick="event.stopPropagation();toggleTipFromBtn(this)" onfocus="openTipFromBtn(this)" onblur="closeTipFromBtn(this)">?</button></div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="cl-progress"><span class="cl-count" id="cnt-ack">0/7</span><div class="mini-bar"><div class="mini-bar-fill" id="bar-ack" style="width:0%"></div></div></div><button class="tooltip-icon" aria-label="Show section help" tabindex="0" onclick="event.stopPropagation();toggleTipFromBtn(this)" onfocus="openTipFromBtn(this)" onblur="closeTipFromBtn(this)">?</button></div>
       <div class="tooltip-box" id="tip-ack"><div class="tt-title">Pre-Flight Acknowledgments</div><div class="tt-body">These are pilot and crew commitments — not one-time checks, but ongoing responsibilities for the entire flight. Review and acknowledge each before the RPIC gate is unlocked.<ul class="tt-list"><li>VLOS (Visual Line of Sight) must be maintained with your naked eye at all times — no FPV goggles alone</li><li>Land immediately if battery drops below 20% — at 15% the drone may auto-land</li><li>Never cross into restricted airspace even briefly — violations are logged by ATC</li><li>The VO watches the sky, not the screen — divide responsibilities clearly before launch</li><li>Flight area should be inspected on foot before setting up equipment</li></ul><div class="tt-tags"><span class="tt-tag tt-critical">FAA REGULATORY REQUIREMENTS</span><span class="tt-tag tt-safety">CREW MUST CONFIRM BEFORE LAUNCH</span></div></div></div>
     </div>
     <div class="cl-body" id="body-ack">
@@ -1172,15 +1506,24 @@
       </div>
       <!-- Items locked until acknowledged -->
       <div class="inflight-items locked" id="inflight-items">
-      <div class="check-item" data-item="ci17" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Flight area inspected on foot for hazards, people, and obstacles</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci18" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Weather conditions confirmed acceptable — wind within limits</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci19" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Will maintain visual line of sight (VLOS) at all times</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci20" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Will monitor battery level continuously and land above 20%</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci21" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Will stay within authorized airspace boundaries</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci22" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">VO assigned and briefed — will actively scan for manned aircraft</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci17" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Flight area inspected on foot for hazards, people, and obstacles"><div class="check-box"></div><span class="item-label">Flight area inspected on foot for hazards, people, and obstacles</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci18" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Weather conditions confirmed acceptable — wind within limits"><div class="check-box"></div><span class="item-label">Weather conditions confirmed acceptable — wind within limits</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci19" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Will maintain visual line of sight (VLOS) at all times"><div class="check-box"></div><span class="item-label">Will maintain visual line of sight (VLOS) at all times</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci20" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Will monitor battery level continuously and land above 20%"><div class="check-box"></div><span class="item-label">Will monitor battery level continuously and land above 20%</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci21" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Will stay within authorized airspace boundaries"><div class="check-box"></div><span class="item-label">Will stay within authorized airspace boundaries</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item student-hide" data-item="ci22" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="VO assigned and briefed — will actively scan for manned aircraft"><div class="check-box"></div><span class="item-label">VO assigned and briefed — will actively scan for manned aircraft</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item student-show" data-item="ci22y" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Instructor is present and available throughout the flight"><div class="check-box"></div><span class="item-label">Instructor is present and available throughout the flight</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item student-hide" data-item="ci22b" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Emergency abort procedure reviewed with crew — know who calls it and how"><div class="check-box"></div><span class="item-label">Emergency abort procedure reviewed with crew — know who calls it and how</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item student-show" data-item="ci22by" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="If something goes wrong, land immediately and notify your instructor"><div class="check-box"></div><span class="item-label">If something goes wrong, land immediately and notify your instructor</span><span class="item-tag tag-safety">SAFETY</span></div>
       </div>
       <div class="lock-notice" aria-live="polite" role="alert">⚠ ACKNOWLEDGE RPIC RESPONSIBILITY ABOVE TO UNLOCK</div>
     </div>
+  </div>
+
+  <!-- GO / NO-GO GATE -->
+  <div id="gonogo-gate" class="gonogo-gate" role="status" aria-live="polite">
+    <div class="gonogo-gate-title" id="gonogo-title">⛔ NO-GO — PRE-LAUNCH CHECKLIST INCOMPLETE</div>
+    <div class="gonogo-gate-msg" id="gonogo-msg">Complete all <strong>CRITICAL</strong> items above before launching. <span id="gonogo-detail"></span></div>
   </div>
 
   <!-- READY TO LAUNCH -->
@@ -1191,11 +1534,11 @@
       <div class="tooltip-box" id="tip-launch"><div class="tt-title">Ready to Launch</div><div class="tt-body">Final checks immediately before arming the drone. The launch zone must be established and clear before motors are ever armed. Click ▶ Start to stamp your flight start time and open the pre-flight briefing for printing.<ul class="tt-list"><li>Designate a flat, debris-free pad at least 6 feet in diameter</li><li>All bystanders must be at least 25 feet away before arming motors</li><li>RTH altitude should be set above the tallest obstacle in the area</li><li>Verbally announce launch — "Drone launching!" — to alert your crew and bystanders</li><li>Click ▶ Start in the Flight Record section before liftoff to timestamp your flight</li></ul><div class="tt-tags"><span class="tt-tag tt-critical">CRITICAL — LAUNCH SEQUENCE</span><span class="tt-tag tt-safety">ANNOUNCE BEFORE ARMING</span></div></div></div>
     </div>
     <div class="cl-body" id="body-launch">
-      <div class="check-item" data-item="ci23" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Launch zone clear, level, and free of debris</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci24" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">All bystanders and crew at safe distance (≥25 ft)</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci25" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Return-to-home (RTH) altitude set above tallest obstacle</span><span class="item-tag tag-standard">STANDARD</span></div>
-      <div class="check-item" data-item="ci26" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Pilot announces "Drone Launching!" to crew and bystanders</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci27" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Flight Start timer clicked (▶ Start) — pre-flight briefing printed</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci23" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Launch zone clear, level, and free of debris"><div class="check-box"></div><span class="item-label">Launch zone clear, level, and free of debris</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci24" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="All bystanders and crew at safe distance (≥25 ft)"><div class="check-box"></div><span class="item-label">All bystanders and crew at safe distance (≥25 ft)</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci25" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Return-to-home (RTH) altitude set above tallest obstacle"><div class="check-box"></div><span class="item-label">Return-to-home (RTH) altitude set above tallest obstacle</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci26" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Pilot announces "Drone Launching!" to crew and bystanders"><div class="check-box"></div><span class="item-label">Pilot announces "Drone Launching!" to crew and bystanders</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci27" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Flight Start timer clicked (▶ Start) — pre-flight briefing printed"><div class="check-box"></div><span class="item-label">Flight Start timer clicked (▶ Start) — pre-flight briefing printed</span><span class="item-tag tag-critical">CRITICAL</span></div>
     </div>
   </div>
 
@@ -1220,13 +1563,13 @@
       <div class="tooltip-box" id="tip-post"><div class="tt-title">Post-Flight Wrap-Up & Flight Record</div><div class="tt-body">Complete this section after landing. Secure all equipment, inspect for damage, then finish your flight record before logging the mission.<ul class="tt-list"><li>Power down drone before controller — prevents unintended motor activation</li><li>Inspect props and body for cracks, bends, or stress marks after every flight</li><li>Click ■ Stop to stamp your end time and auto-calculate flight duration</li><li>Enter max altitude and document any incidents before logging</li><li>Use ✦ Log This Mission to save, then reprint the briefing for a complete record</li></ul><div class="tt-tags"><span class="tt-tag tt-critical">INSPECT BEFORE PACKING</span><span class="tt-tag tt-standard">COMPLETE FLIGHT RECORD</span></div></div></div>
     </div>
     <div class="cl-body" id="body-post">
-      <div class="check-item" data-item="ci28" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Drone landed safely and motors disarmed</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci29" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Drone powered down and secured in case</span><span class="item-tag tag-standard">STANDARD</span></div>
-      <div class="check-item" data-item="ci30" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Controller powered down and stored</span><span class="item-tag tag-standard">STANDARD</span></div>
-      <div class="check-item" data-item="ci31" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Props, arms, and body inspected for damage</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci32" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Batteries checked for defects (swelling, cracks, heat)</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci33" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Memory cards / media secured and labeled</span><span class="item-tag tag-standard">STANDARD</span></div>
-      <div class="check-item" data-item="ci34" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Flight area cleaned up — no litter or equipment left behind</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci28" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Drone landed safely and motors disarmed"><div class="check-box"></div><span class="item-label">Drone landed safely and motors disarmed</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci29" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Drone powered down and secured in case"><div class="check-box"></div><span class="item-label">Drone powered down and secured in case</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci30" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Controller powered down and stored"><div class="check-box"></div><span class="item-label">Controller powered down and stored</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci31" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Props, arms, and body inspected for damage"><div class="check-box"></div><span class="item-label">Props, arms, and body inspected for damage</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci32" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Batteries checked for defects (swelling, cracks, heat)"><div class="check-box"></div><span class="item-label">Batteries checked for defects (swelling, cracks, heat)</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci33" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Memory cards / media secured and labeled"><div class="check-box"></div><span class="item-label">Memory cards / media secured and labeled</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci34" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Flight area cleaned up — no litter or equipment left behind"><div class="check-box"></div><span class="item-label">Flight area cleaned up — no litter or equipment left behind</span><span class="item-tag tag-standard">STANDARD</span></div>
       <div class="cl-subsection-divider">📋 Flight Record</div>
       <div class="post-flight-fields">
         <div class="info-field">
@@ -1268,11 +1611,11 @@
       <div class="post-flight-notes"><div class="info-field full"><label>Mission Notes</label>
         <textarea id="f-notes" maxlength="500" placeholder="Observations, incidents, lessons learned, or anything worth recording..." oninput="updateCharCount('f-notes',500)"></textarea>
       </div></div>
-      <div class="check-item" data-item="ci35" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Flight End timer clicked (■ Stop) — end time and duration recorded</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci36" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Max altitude reached entered in Flight Record</span><span class="item-tag tag-standard">STANDARD</span></div>
-      <div class="check-item" data-item="ci37" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Any incidents or anomalies documented in Flight Record</span><span class="item-tag tag-safety">SAFETY</span></div>
-      <div class="check-item" data-item="ci38" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Mission logged using ✦ Log This Mission button</span><span class="item-tag tag-critical">CRITICAL</span></div>
-      <div class="check-item" data-item="ci39" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Checklist item"><div class="check-box"></div><span class="item-label">Post-flight briefing reprinted with complete flight record</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci35" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Flight End timer clicked (■ Stop) — end time and duration recorded"><div class="check-box"></div><span class="item-label">Flight End timer clicked (■ Stop) — end time and duration recorded</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci36" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Max altitude reached entered in Flight Record"><div class="check-box"></div><span class="item-label">Max altitude reached entered in Flight Record</span><span class="item-tag tag-standard">STANDARD</span></div>
+      <div class="check-item" data-item="ci37" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Any incidents or anomalies documented in Flight Record"><div class="check-box"></div><span class="item-label">Any incidents or anomalies documented in Flight Record</span><span class="item-tag tag-safety">SAFETY</span></div>
+      <div class="check-item" data-item="ci38" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Mission logged using ✦ Log This Mission button"><div class="check-box"></div><span class="item-label">Mission logged using ✦ Log This Mission button</span><span class="item-tag tag-critical">CRITICAL</span></div>
+      <div class="check-item" data-item="ci39" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleCheck(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCheck(this)}" aria-label="Post-flight briefing reprinted with complete flight record"><div class="check-box"></div><span class="item-label">Post-flight briefing reprinted with complete flight record</span><span class="item-tag tag-standard">STANDARD</span></div>
     </div>
   </div>
 
@@ -1291,8 +1634,35 @@
     <button class="btn btn-google" onclick="openGoogleModal()" aria-label="Sync to Google Sheets">⬆ Google Sheets</button>
     <button class="btn btn-danger" onclick="resetAll(false)" aria-label="Reset all form fields and checklist">↺ Reset<span class="kbd" aria-hidden="true">Ctrl+R</span></button>
     <button class="btn btn-primary" onclick="openBriefing()" aria-label="View and print pre-flight briefing sheet">📋 Briefing</button>
-    <button class="btn btn-primary" onclick="printMission()" aria-label="Print or save as PDF" style="color:var(--muted);border-color:var(--muted)">🖨 Print / PDF</button>
+    <button class="btn btn-pdf" onclick="saveAsPDF()" aria-label="Save checklist as PDF">🗎 Save as PDF</button>
   </div>
+
+  </div><!-- /standard-cl -->
+
+  <!-- ══════════════════════════════════════════════════════
+       BASIC STUDENT CHECKLIST — light theme, PDF-matched layout
+  ══════════════════════════════════════════════════════ -->
+  <div class="student-cl" id="student-cl" aria-label="Basic Student Checklist">
+
+    <!-- Session tabs -->
+    <div class="sess-tabs" role="tablist" aria-label="Class sessions">
+      <button class="sess-tab active" id="sess-tab-0" role="tab" aria-selected="true" onclick="switchSession(0)">Day 1</button>
+      <button class="sess-tab" id="sess-tab-1" role="tab" aria-selected="false" onclick="switchSession(1)" style="display:none">Day 2</button>
+      <button class="sess-tab" id="sess-tab-2" role="tab" aria-selected="false" onclick="switchSession(2)" style="display:none">Day 3</button>
+      <button class="sess-new-btn" id="sess-new-btn" onclick="newSession()" aria-label="Save current session and start new one">+ New Session</button>
+    </div>
+
+    <!-- Sessions container — JS renders session cards here -->
+    <div id="sessions-container"></div>
+
+    <!-- Student Actions -->
+    <div class="student-actions">
+      <button class="btn-student btn-student-pdf" onclick="printStudentPDF()" aria-label="Print or save as PDF">🗎 Print / Save PDF</button>
+      <button class="btn-student btn-student-reset" onclick="resetCurrentSession()" aria-label="Reset current session">↺ Reset Session</button>
+    </div>
+
+  </div><!-- /student-cl -->
+
 
 </main>
 </div>
@@ -1654,6 +2024,496 @@ function printMission() {
   });
 }
 
+// ─── SAVE AS PDF ──────────────────────────────────────────────────────────────
+function saveAsPDF() {
+  preparePrint();
+  document.body.classList.add('printing');
+  // Brief instruction toast then trigger print dialog (user selects "Save as PDF")
+  showToast('📄 Choose "Save as PDF" in the print dialog');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.print();
+    });
+  });
+}
+
+// ─── BASIC STUDENT MODE ───────────────────────────────────────────────────────────────
+let studentModeActive = false;
+
+// ── FIELD TOOLTIP DEFINITIONS ─────────────────────────────────────────────────
+// Each research field has a ? button explaining what it is and where to find it
+const FIELD_TIPS = {
+  'sh-date':     'The date of your flight. Required on any documentation you carry. If stopped, law enforcement needs to confirm this flight is happening today.',
+  'sh-location': 'The specific site name and address where you are flying. Be precise — this is what confirms you are legally authorized at this location, not somewhere nearby.',
+  'sh-ftype':    'What type of flight are you conducting? Recreational (for fun), Part 107 (commercial/professional), or Educational (class). Each has different rules and liability.',
+  'sh-p107':     'Do you hold an FAA Part 107 Remote Pilot Certificate? If yes, you are authorized for commercial operations. If no, you must be flying recreationally under TRUST rules.',
+  'sh-trust':    'The TRUST test is the FAA recreational flyer safety test. Required for all recreational drone pilots. Free at FAASafety.gov — takes about 30 minutes.',
+  'sh-vo':       'Your Visual Observer watches the sky for manned aircraft while you focus on flying. They must stay with you and communicate actively — this is not a casual role.',
+  'sh-vo-p107':  'Does your VO hold a Part 107 certificate? This matters for commercial operations where having a certified VO may affect what you are legally permitted to do.',
+  'sh-mission':  'A brief description of what you are doing today. Example: "Aerial photography of park for class assignment." This shows intent and scope if questioned on site.',
+  'sh-drone':    'Your drone\'s make, model, and FAA registration number (starts with FA). Registration is required for drones over 0.55 lbs. Flying unregistered is a federal violation.',
+  'sh-weather':  'Current sky conditions at the flight site. Check weather.gov or a weather app before leaving home. Note: clear, partly cloudy, overcast, or any precipitation.',
+  'sh-wind':     'Wind speed in mph or knots at the flight altitude. Check your drone\'s specs for max wind rating. Surface calm does not mean calm at 100 ft — always check at altitude.',
+  'sh-kp':       'The KP index measures geomagnetic activity on a 0–9 scale. At 5 or higher, GPS and compass can be unreliable. Check NOAA or spaceweather.com before flying.',
+  'sh-airspace': 'The class of airspace at your flight location. Look this up in B4UFLY or SkyVector before arriving. Class G is uncontrolled and usually requires no authorization. Classes B, C, and D are controlled and require LAANC approval.',
+  'sh-auth':     'Your LAANC authorization confirmation number if flying in controlled airspace. Get this in the B4UFLY app or through a LAANC provider before arriving on site. This is what law enforcement will ask for. Enter N/A if flying in Class G.',
+};
+
+// ── SESSION ENGINE ──────────────────────────────────────────────────────────────
+const MAX_SESSIONS = 3;
+let sessions = [];
+let activeSession = 0;
+
+function newSessionData(dayNum) {
+  return { day: dayNum, header: {}, checklist: {}, complete: false };
+}
+
+function initSessions() {
+  try {
+    const saved = localStorage.getItem('at_student_sessions');
+    if (saved) sessions = JSON.parse(saved);
+  } catch(e) {}
+  if (!sessions.length) sessions = [newSessionData(1)];
+  activeSession = Math.max(0, sessions.length - 1);
+  renderSessions();
+}
+
+function saveSessions() {
+  try { localStorage.setItem('at_student_sessions', JSON.stringify(sessions)); } catch(e) {}
+}
+
+// ── CHECKLIST DEFINITIONS (PDF-matched, generic) ────────────────────────────────
+const SCL_DEFS = [
+  { id:'ppe', icon:'🦺', title:'PPE',
+    whyTitle:'Why PPE matters',
+    why:'Drones are powerful tools operating in public spaces. PPE signals professionalism, satisfies site safety requirements at colleges and job sites, and protects you if something goes wrong. Employers expect pilots to arrive PPE-ready without being asked.',
+    items:[
+      { id:'sp1', label:'Safety vest on',
+        why:'High-visibility vests make you identifiable as the operator on site. Many regulated flight locations, college campuses, and job sites require them.' },
+      { id:'sp2', label:'Hard hat on (if required for site)',
+        why:'Construction sites, rooftops, and outdoor structures often require hard hats. Always confirm site PPE requirements before you arrive.' },
+      { id:'sp3', label:'Closed-toe shoes worn',
+        why:'Drone propellers spin at thousands of RPM. Closed-toe shoes protect your feet during launch, landing, and any unexpected motor activation.' },
+      { id:'sp4', label:'Chair brought (outdoor class — no seating or shade provided)',
+        why:'Class sessions are held outdoors with no shade or seating. Bring a folding chair. Fatigue and sun exposure reduce focus and decision-making quality — both are safety factors when operating an aircraft.' },
+      { id:'sp5', label:'Weather protection ready (hat, sunscreen, rain gear)',
+        why:'Outdoor flights can run for hours. Protect yourself from sun, wind, and rain. A pilot who is uncomfortable makes poorer decisions.' },
+      { id:'sp6', label:'Water / hydration available',
+        why:'Dehydration reduces focus and reaction time. On real-world job sites, pilots are responsible for their own readiness. Build the habit now.' },
+    ]},
+  { id:'pre', icon:'🔧', title:'Pre-Flight',
+    whyTitle:'Why pre-flight checks matter',
+    why:'Most drone incidents happen because of skipped pre-flight steps — dead batteries, missed gimbal guards, no GPS lock. Professional pilots run this checklist on every single flight. Consistency is the skill employers are hiring for.',
+    items:[
+      { id:'pf1', label:'Controller checked — powered on and linked to drone',
+        why:'If the controller isn\'t paired before launch, you have no control input. Confirm the link on-screen before you approach the launch area.' },
+      { id:'pf2', label:'Drone checked — no visible damage to body, arms, or props',
+        why:'A cracked propeller can shatter in flight causing a crash. A damaged arm can fail under load. Inspect everything visually before powering on — it takes 30 seconds.' },
+      { id:'pf3', label:'Battery level confirmed (drone and controller)',
+        why:'Know your battery percentage before every flight, not after. Low batteries cause rushed flights, bad decisions, and unexpected auto-landings in unsafe locations.' },
+      { id:'pf4', label:'Flight area checked — walked and inspected for hazards',
+        why:'A map view is never enough. Walk the area. Look for power lines, people, pets, uneven ground, and anything that changed since you last flew here.' },
+    ]},
+  { id:'to', icon:'🚀', title:'Take-Off',
+    whyTitle:'Why take-off procedure matters',
+    why:'The launch phase carries the highest risk — motors are arming, bystanders are nearby, and the drone is transitioning from ground to air. A rushed launch is where most incidents begin. Slow down, clear the zone, and announce every time.',
+    items:[
+      { id:'to1', label:'Landing zone clear, level, and free of debris',
+        why:'The launch pad is where the drone is most vulnerable. Rocks, tall grass, or uneven ground can tip or flip the drone before it leaves the ground.' },
+      { id:'to2', label:'Drone flight safety check — GPS lock, home point, RTH altitude confirmed',
+        why:'Before arming motors: confirm GPS satellites are locked, the home point is set to your location, and RTH altitude clears the tallest obstacle in the area. These three settings determine where the drone goes if something goes wrong.' },
+    ]},
+  { id:'post', icon:'🛬', title:'Post-Flight',
+    whyTitle:'Why post-flight matters',
+    why:'Post-flight is where professional habits separate good pilots from great ones. Equipment packed away damaged will fail on the next mission. A flight that isn\'t logged doesn\'t exist for legal or regulatory purposes. Clean up and log up — every time.',
+    items:[
+      { id:'po1', label:'Equipment check — drone, controller, and batteries inspected',
+        why:'Inspect everything after landing. Damage caught now gets fixed before the next flight. A swollen or cracked battery is a fire hazard — never store or charge a damaged battery.' },
+      { id:'po2', label:'Flight area cleanup — nothing left behind',
+        why:'Leave every site better than you found it. Leaving gear, packaging, or litter behind is a fast way to lose access to a location — and reflects on you as a professional.' },
+      { id:'po3', label:'Flight logged — date, location, duration, and pilot recorded',
+        why:'Most employers require a flight log even when the FAA does not. Your log is your professional record, your proof of experience, and your legal documentation if anything is ever disputed.' },
+    ]},
+];
+
+// ── BUILD ONE SESSION CARD ──────────────────────────────────────────────────────
+function buildSessionCard(idx) {
+  const s = sessions[idx];
+
+  function field(id, label, type, placeholder, extras) {
+    const val = (s.header[id] || '').replace(/"/g, '&quot;');
+    const hasTip = !!FIELD_TIPS[id];
+    const tipId = `ftip-${id}-s${idx}`;
+    const inputId = `${id}-s${idx}`;
+    const tipBtn = hasTip
+      ? `<button class="sh-tip-btn" onclick="event.stopPropagation();toggleFieldTip('${tipId}',this)"
+           aria-label="Learn about: ${label}" aria-expanded="false" aria-controls="${tipId}">?</button>`
+      : '';
+    const tipBox = hasTip
+      ? `<div class="sh-tip-box" id="${tipId}" role="tooltip">${FIELD_TIPS[id]}</div>`
+      : '';
+    const inputType = type || 'text';
+    return `<div class="sh-field">
+      <div class="sh-label-row">
+        <label class="sh-label" for="${inputId}">${label}</label>${tipBtn}
+      </div>
+      <input class="sh-input" id="${inputId}" type="${inputType}"
+        placeholder="${placeholder||''}" value="${val}" ${extras||''}
+        oninput="saveSessionField(${idx},'${id}',this.value)"
+        aria-describedby="${hasTip ? tipId : ''}">
+      ${tipBox}
+    </div>`;
+  }
+
+  const checklistHtml = buildSclSections(idx);
+
+  return `
+  <div class="session-card${idx === activeSession ? ' active' : ''}" id="session-card-${idx}" data-session="${idx}">
+    <div class="student-header-card">
+      <div class="sh-title">Mission Checklist — Day ${s.day}</div>
+
+      <div class="sh-row sh-row-3">
+        ${field('sh-name','Name','text','Your full name','autocomplete="name"')}
+        ${field('sh-class','Class','text','e.g. Basic Drone','')}
+        ${field('sh-time','Time','time','','')}
+      </div>
+
+      <div class="sh-row sh-row-2" style="margin-top:8px">
+        ${field('sh-date','Date','date','','')}
+        ${field('sh-location','Location','text','Flight site name / address','')}
+      </div>
+
+      <div class="sh-row sh-row-2" style="margin-top:8px">
+        ${field('sh-ftype','Flight Type','text','Recreational / Part 107 / Educational','')}
+        ${field('sh-drone','Drone (Make / Model / FAA Reg #)','text','e.g. DJI Mini 3 — FA...','')}
+      </div>
+
+      <div class="sh-row sh-row-4" style="margin-top:8px">
+        ${field('sh-p107','Part 107','text','Y / N','')}
+        ${field('sh-trust','TRUST','text','Y / N','')}
+        ${field('sh-vo','VO Name','text','Visual observer','')}
+        ${field('sh-vo-p107','VO Part 107?','text','Y / N','')}
+      </div>
+
+      <div class="sh-row sh-row-1" style="margin-top:8px">
+        ${field('sh-mission','Mission','text','Brief description of today\'s flight objective','')}
+      </div>
+
+      <hr class="sh-divider">
+
+      <div class="sh-section-label">Weather &amp; Airspace Research</div>
+
+      <div class="sh-row sh-row-3" style="margin-top:8px">
+        ${field('sh-weather','Weather','text','Current conditions','')}
+        ${field('sh-wind','Wind Speed','text','mph / kts','')}
+        ${field('sh-kp','KP Index','text','0–9','')}
+      </div>
+
+      <div class="sh-row sh-row-2" style="margin-top:8px">
+        ${field('sh-airspace','Airspace Class','text','Class B / C / D / G','')}
+        ${field('sh-auth','Authorization / LAANC','text','Confirmation # or N/A','')}
+      </div>
+    </div>
+
+    <div class="student-progress" style="margin-top:10px"
+      role="progressbar" aria-label="Day ${s.day} checklist progress"
+      aria-valuenow="${getSessionPct(idx)}" aria-valuemin="0" aria-valuemax="100">
+      <span class="sp-label" aria-hidden="true">Day ${s.day} Progress</span>
+      <div class="sp-bar-wrap" aria-hidden="true"><div class="sp-bar-fill" id="sp-bar-s${idx}" style="width:${getSessionPct(idx)}%"></div></div>
+      <span class="sp-pct" id="sp-pct-s${idx}" aria-live="polite">${getSessionPct(idx)}%</span>
+    </div>
+    <div class="student-complete${s.complete?' show':''}" id="student-complete-s${idx}"
+      role="status" aria-live="polite" aria-atomic="true">
+      <div class="student-complete-title">&#10003; Day ${s.day} Complete — Ready to Fly</div>
+    </div>
+
+    ${checklistHtml}
+  </div>`;
+}
+
+function getSessionPct(idx) {
+  if (!sessions[idx]) return 0;
+  let total = 0, done = 0;
+  SCL_DEFS.forEach(sec => {
+    sec.items.forEach(item => {
+      total++;
+      if (sessions[idx].checklist[`${item.id}-s${idx}`]) done++;
+    });
+  });
+  return total ? Math.round(done / total * 100) : 0;
+}
+
+function buildSclSections(idx) {
+  return SCL_DEFS.map(sec => {
+    const itemsHtml = sec.items.map(item => {
+      const isChecked = sessions[idx] && sessions[idx].checklist[`${item.id}-s${idx}`];
+      const itemId = `${item.id}-s${idx}`;
+      const whyId = `why-item-${item.id}-s${idx}`;
+      return `<div class="scl-item${isChecked?' checked':''}"
+        role="checkbox" aria-checked="${isChecked?'true':'false'}"
+        tabindex="0" id="${itemId}"
+        data-scl="${itemId}" data-sess="${idx}"
+        aria-label="${item.label}"
+        onclick="toggleSclItem(this)"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSclItem(this)}">
+        <div class="scl-check-box" aria-hidden="true"></div>
+        <div class="scl-item-content">
+          <span class="scl-item-label${isChecked?' checked':''}" aria-hidden="true">${item.label}</span>
+          <button class="scl-why-item-btn"
+            onclick="event.stopPropagation();toggleSclItemWhy(this)"
+            aria-label="Why: ${item.label}"
+            aria-expanded="false" aria-controls="${whyId}">WHY</button>
+          <div class="scl-item-why" id="${whyId}" role="note">${item.why}</div>
+        </div>
+      </div>`;
+    }).join('');
+
+    const total = sec.items.length;
+    const done = sessions[idx]
+      ? sec.items.filter(i => sessions[idx].checklist[`${i.id}-s${idx}`]).length
+      : 0;
+    const pct = total ? Math.round(done / total * 100) : 0;
+
+    return `<div class="scl-section" id="scl-${sec.id}-s${idx}">
+      <div class="scl-header" onclick="toggleSclSection('scl-body-${sec.id}-s${idx}',this)"
+        role="button" tabindex="0" aria-expanded="false" aria-controls="scl-body-${sec.id}-s${idx}"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSclSection('scl-body-${sec.id}-s${idx}',this)}">
+        <div class="scl-title-row"><span class="scl-icon">${sec.icon}</span><span class="scl-title">${sec.title}</span></div>
+        <div class="scl-progress-wrap">
+          <span class="scl-count" id="scl-cnt-${sec.id}-s${idx}">${done}/${total}</span>
+          <div class="scl-mini-bar"><div class="scl-mini-fill" id="scl-bar-${sec.id}-s${idx}" style="width:${pct}%"></div></div>
+          <button class="scl-why-btn"
+            onclick="event.stopPropagation();toggleSclWhy('why-${sec.id}-s${idx}',this)"
+            aria-label="Why does ${sec.title} matter?"
+            aria-expanded="false" aria-controls="why-${sec.id}-s${idx}">? WHY</button>
+        </div>
+      </div>
+      <div class="scl-why-box" id="why-${sec.id}-s${idx}">
+        <div class="scl-why-title">${sec.whyTitle}</div>${sec.why}
+      </div>
+      <div class="scl-body" id="scl-body-${sec.id}-s${idx}" style="display:none">${itemsHtml}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderSessions() {
+  const container = document.getElementById('sessions-container');
+  if (!container) return;
+  container.innerHTML = sessions.map((s, i) => buildSessionCard(i)).join('');
+  for (let i = 0; i < MAX_SESSIONS; i++) {
+    const tab = document.getElementById(`sess-tab-${i}`);
+    if (!tab) continue;
+    tab.style.display = i < sessions.length ? '' : 'none';
+    tab.classList.toggle('active', i === activeSession);
+    tab.classList.toggle('complete', !!(sessions[i] && sessions[i].complete));
+    tab.textContent = `Day ${i + 1}${sessions[i] && sessions[i].complete ? ' \u2713' : ''}`;
+    tab.setAttribute('aria-selected', i === activeSession ? 'true' : 'false');
+  }
+  const newBtn = document.getElementById('sess-new-btn');
+  if (newBtn) newBtn.disabled = sessions.length >= MAX_SESSIONS;
+  // Open first scl section of active session by default
+  const firstBody = document.getElementById(`scl-body-ppe-s${activeSession}`);
+  if (firstBody) {
+    firstBody.style.display = 'block';
+    const hdr = firstBody.previousElementSibling;
+    if (hdr && hdr.classList.contains('scl-header')) hdr.setAttribute('aria-expanded','true');
+  }
+}
+
+function switchSession(idx) {
+  if (idx >= sessions.length) return;
+  activeSession = idx;
+  document.querySelectorAll('.session-card').forEach((c, i) => c.classList.toggle('active', i === idx));
+  document.querySelectorAll('.sess-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+    t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+  });
+}
+
+function newSession() {
+  if (sessions.length >= MAX_SESSIONS) return;
+  const prev = sessions[activeSession] || {};
+  const s = newSessionData(sessions.length + 1);
+  // Carry name and class across sessions — everything else student researches fresh
+  ['sh-name','sh-class'].forEach(k => { if (prev.header && prev.header[k]) s.header[k] = prev.header[k]; });
+  sessions.push(s);
+  saveSessions();
+  activeSession = sessions.length - 1;
+  renderSessions();
+  switchSession(activeSession);
+  showToast(`Day ${sessions.length} started`);
+}
+
+function toggleFieldTip(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isOpen = el.classList.toggle('open');
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
+function toggleSclSection(bodyId, hdr) {
+  const body = document.getElementById(bodyId);
+  if (!body) return;
+  const isOpen = body.style.display === 'block';
+  body.style.display = isOpen ? 'none' : 'block';
+  hdr.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+}
+
+function toggleSclItem(el) {
+  el.classList.toggle('checked');
+  const isChecked = el.classList.contains('checked');
+  el.setAttribute('aria-checked', isChecked ? 'true' : 'false');
+  const label = el.querySelector('.scl-item-label');
+  if (label) label.classList.toggle('checked', isChecked);
+  const sessIdx = parseInt(el.dataset.sess);
+  const itemId = el.dataset.scl;
+  if (!isNaN(sessIdx) && sessions[sessIdx]) {
+    sessions[sessIdx].checklist[itemId] = isChecked;
+    saveSessions();
+    updateStudentProgress(sessIdx);
+  }
+}
+
+function toggleSclWhy(id, btn) {
+  const box = document.getElementById(id);
+  if (!box) return;
+  const isOpen = box.classList.toggle('open');
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
+function toggleSclItemWhy(btn) {
+  const why = btn.nextElementSibling;
+  if (why && why.classList.contains('scl-item-why')) {
+    why.classList.toggle('open');
+    const isOpen = why.classList.contains('open');
+    btn.textContent = isOpen ? 'HIDE' : 'WHY';
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+}
+
+function saveSessionField(idx, fieldId, value) {
+  if (!sessions[idx]) return;
+  sessions[idx].header[fieldId] = value;
+  saveSessions();
+}
+
+function updateStudentProgress(idx) {
+  if (idx === undefined) idx = activeSession;
+  if (!sessions[idx]) return;
+  let total = 0, done = 0;
+  SCL_DEFS.forEach(sec => {
+    const secDone = sec.items.filter(i => sessions[idx].checklist[`${i.id}-s${idx}`]).length;
+    const secTotal = sec.items.length;
+    const pct = secTotal ? Math.round(secDone / secTotal * 100) : 0;
+    const cnt = document.getElementById(`scl-cnt-${sec.id}-s${idx}`);
+    const bar = document.getElementById(`scl-bar-${sec.id}-s${idx}`);
+    if (cnt) cnt.textContent = `${secDone}/${secTotal}`;
+    if (bar) bar.style.width = pct + '%';
+    total += secTotal; done += secDone;
+  });
+  const overall = total ? Math.round(done / total * 100) : 0;
+  const spBar = document.getElementById(`sp-bar-s${idx}`);
+  const spPct = document.getElementById(`sp-pct-s${idx}`);
+  const complete = document.getElementById(`student-complete-s${idx}`);
+  const tab = document.getElementById(`sess-tab-${idx}`);
+  if (spBar) spBar.style.width = overall + '%';
+  if (spPct) spPct.textContent = overall + '%';
+  const progWrap = spBar && spBar.closest ? spBar.closest('[role="progressbar"]') : null;
+  if (progWrap) progWrap.setAttribute('aria-valuenow', overall);
+  const isComplete = overall === 100;
+  sessions[idx].complete = isComplete;
+  if (complete) complete.classList.toggle('show', isComplete);
+  if (tab) {
+    tab.classList.toggle('complete', isComplete);
+    tab.textContent = `Day ${idx + 1}${isComplete ? ' \u2713' : ''}`;
+  }
+  saveSessions();
+}
+
+function resetCurrentSession() {
+  const idx = activeSession;
+  if (!sessions[idx]) return;
+  const keep = {};
+  ['sh-name','sh-class'].forEach(k => { if (sessions[idx].header[k]) keep[k] = sessions[idx].header[k]; });
+  sessions[idx] = newSessionData(sessions[idx].day);
+  sessions[idx].header = keep;
+  saveSessions();
+  renderSessions();
+  showToast(`Day ${idx + 1} reset`);
+}
+
+function printStudentPDF() {
+  document.querySelectorAll('.scl-body').forEach(b => { b.style.display = 'block'; });
+  document.querySelectorAll('.scl-item-why').forEach(b => { b.style.display = 'none'; });
+  document.querySelectorAll('.scl-why-box').forEach(b => { b.classList.remove('open'); });
+  document.querySelectorAll('.sh-tip-box').forEach(b => { b.classList.remove('open'); });
+  showToast('In the print dialog, choose "Save as PDF"');
+  requestAnimationFrame(() => requestAnimationFrame(() => window.print()));
+}
+
+function toggleStudentMode() {
+  studentModeActive = !studentModeActive;
+  document.body.classList.toggle('student-mode', studentModeActive);
+  const sw = document.getElementById('student-switch');
+  const st = document.getElementById('student-toggle-status');
+  if (sw) { sw.classList.toggle('on', studentModeActive); sw.setAttribute('aria-checked', studentModeActive ? 'true' : 'false'); }
+  if (st) st.textContent = studentModeActive ? 'ON' : 'OFF';
+  try { localStorage.setItem('at_student_mode', studentModeActive ? '1' : '0'); } catch(e) {}
+  if (studentModeActive) initSessions();
+  updateProgress();
+  updateGoNoGo();
+  showToast(studentModeActive ? '🎓 Basic Student Mode ON' : '✦ Standard Mode active');
+}
+
+// Restore student mode on load
+(function() {
+  try {
+    if (localStorage.getItem('at_student_mode') === '1') {
+      setTimeout(() => { if (!studentModeActive) toggleStudentMode(); }, 150);
+    }
+  } catch(e) {}
+})();
+
+
+// ─── GO / NO-GO GATE ──────────────────────────────────────────────────────────
+function updateGoNoGo() {
+  const gate = document.getElementById('gonogo-gate');
+  const title = document.getElementById('gonogo-title');
+  const detail = document.getElementById('gonogo-detail');
+  if (!gate) return;
+
+  // Collect all visible CRITICAL items from setup, crew, ack sections
+  const preLaunchSections = ['setup','crew','ack'];
+  let totalCritical = 0, doneCritical = 0, missingLabels = [];
+
+  preLaunchSections.forEach(id => {
+    const body = document.getElementById('body-' + id);
+    if (!body) return;
+    body.querySelectorAll('.check-item').forEach(item => {
+      const tag = item.querySelector('.item-tag');
+      const isHidden = window.getComputedStyle(item).display === 'none';
+      if (!isHidden && tag && tag.textContent.trim() === 'CRITICAL') {
+        totalCritical++;
+        if (item.classList.contains('checked')) { doneCritical++; }
+        else { const lbl = item.querySelector('.item-label'); if (lbl) missingLabels.push(lbl.textContent.trim()); }
+      }
+    });
+  });
+
+  const allCriticalDone = doneCritical >= totalCritical && totalCritical > 0;
+  gate.classList.toggle('show', true);
+  gate.classList.toggle('gonogo-ok', allCriticalDone);
+
+  if (allCriticalDone) {
+    title.textContent = '✅ GO — ALL CRITICAL ITEMS COMPLETE';
+    if (detail) detail.textContent = `${doneCritical}/${totalCritical} critical items verified. Ready to proceed to launch.`;
+  } else {
+    title.textContent = '⛔ NO-GO — PRE-LAUNCH CHECKLIST INCOMPLETE';
+    const remaining = totalCritical - doneCritical;
+    if (detail) detail.textContent = `${remaining} critical item${remaining !== 1 ? 's' : ''} remaining.`;
+  }
+}
+
 // Also intercept Ctrl+P / Cmd+P so keyboard shortcut uses the same prep
 window.addEventListener('keydown', function(e) {
   if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
@@ -1895,6 +2755,8 @@ function updateProgress() {
   // Sync progress bar ARIA
   const pb = document.getElementById('main-progress-bar');
   if (pb) pb.setAttribute('aria-valuenow', overall);
+  // Update Go/No-Go gate
+  if (typeof updateGoNoGo === 'function') updateGoNoGo();
 }
 
 // ─── CAPTURE ──────────────────────────────────────────────────────────────────
@@ -3070,5 +3932,6 @@ if ('serviceWorker' in navigator) {
   </div>
 </div>
 
+<div class="version-badge" aria-hidden="true">v1.0</div>
 </body>
 </html>

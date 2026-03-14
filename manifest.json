@@ -2,6 +2,7 @@
   "name": "AguirreTech Drone Mission Checklist",
   "short_name": "Drone Checklist",
   "description": "Pre-flight checklist and mission log for drone pilots — by AguirreTech",
+  "version": "2.0",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0e1a",
