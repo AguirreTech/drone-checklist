@@ -343,6 +343,31 @@
   .rpic-ack-text { font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--accent2); line-height: 1.5; letter-spacing: 0.5px; }
   .rpic-ack-row.acknowledged .rpic-ack-text { color: var(--muted); text-decoration: line-through; }
   .rpic-tag { display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; padding: 1px 6px; border: 1px solid rgba(255,107,53,0.5); color: var(--accent2); background: rgba(255,107,53,0.08); letter-spacing: 1px; margin-left: 8px; vertical-align: middle; }
+
+  /* IMSAFE SELF-ASSESSMENT BLOCK */
+  .imsafe-block { border-bottom: 1px solid var(--border); background: rgba(0,200,255,0.03); }
+  .imsafe-toggle-row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; cursor: pointer; user-select: none; }
+  .imsafe-toggle-row:hover { background: rgba(0,200,255,0.05); }
+  .imsafe-icon { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.2); flex-shrink: 0; }
+  .imsafe-label { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); flex: 1; }
+  .imsafe-status { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 1px; }
+  .imsafe-status.all-clear { color: var(--accent3); }
+  .imsafe-chevron { font-size: 0.7rem; color: var(--muted); transition: transform 0.2s; }
+  .imsafe-block.expanded .imsafe-chevron { transform: rotate(180deg); }
+  .imsafe-items { display: none; border-top: 1px solid rgba(0,200,255,0.1); }
+  .imsafe-block.expanded .imsafe-items { display: block; }
+  .imsafe-item { display: flex; align-items: flex-start; padding: 10px 16px 10px 20px; border-bottom: 1px solid rgba(30,45,80,0.5); gap: 14px; cursor: pointer; transition: background 0.15s; }
+  .imsafe-item:last-child { border-bottom: none; }
+  .imsafe-item:hover { background: rgba(0,200,255,0.03); }
+  .imsafe-item.checked { background: rgba(57,255,20,0.03); }
+  .imsafe-item.checked .imsafe-check-box { background: var(--accent3); border-color: var(--accent3); box-shadow: 0 0 8px rgba(57,255,20,0.4); }
+  .imsafe-item.checked .imsafe-check-box::after { opacity: 1; }
+  .imsafe-check-box { width: 20px; height: 20px; border: 1.5px solid var(--muted); background: transparent; flex-shrink: 0; position: relative; transition: all 0.2s; margin-top: 2px; }
+  .imsafe-check-box::after { content: ''; position: absolute; left: 5px; top: 2px; width: 6px; height: 10px; border: 2px solid #0a0e1a; border-top: none; border-left: none; transform: rotate(45deg); opacity: 0; transition: opacity 0.15s; }
+  .imsafe-item-content { flex: 1; }
+  .imsafe-letter { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 1px; margin-bottom: 2px; }
+  .imsafe-question { font-family: 'Exo 2', sans-serif; font-size: 0.85rem; color: var(--text); line-height: 1.4; }
+  .imsafe-item.checked .imsafe-question { color: var(--muted); }
   .inflight-items { transition: opacity 0.3s, filter 0.3s; }
   .inflight-items.locked { opacity: 0.3; pointer-events: none; filter: blur(1px); }
   .inflight-items.locked .check-item { cursor: not-allowed; }
@@ -404,23 +429,7 @@
     #page-checklist { display: block !important; }
 
     /* ── PAGE SETUP ── */
-    @page { margin: 1.5cm 1.8cm 2cm; size: letter portrait; }
-
-    /* ── PRINT FOOTER ── */
-    .print-footer {
-      display: flex !important;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      border-top: 0.5pt solid #ccc;
-      padding-top: 4pt;
-      font-size: 7pt;
-      color: #999 !important;
-      justify-content: space-between;
-      align-items: center;
-      font-family: monospace;
-    }
-    .print-footer-left  { text-align: left; color: #999 !important; }
-    .print-footer-right { text-align: right; color: #999 !important; }
+    @page { margin: 1.5cm 1.8cm; size: letter portrait; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { background: white !important; color: #111 !important;
       font-size: 9pt !important; line-height: 1.3 !important; }
@@ -511,6 +520,15 @@
     .rpic-ack-row { padding: 2pt 0 !important; font-size: 7.5pt !important;
       color: #553300 !important; }
     .lock-notice { display: none !important; }
+    .imsafe-block { background: #f0f8ff !important; border-color: #ccc !important; }
+    .imsafe-toggle-row { padding: 4pt 6pt !important; }
+    .imsafe-label { color: #003366 !important; font-size: 7.5pt !important; }
+    .imsafe-items { display: block !important; }
+    .imsafe-item { padding: 2pt 6pt 2pt 12pt !important; }
+    .imsafe-question { font-size: 7pt !important; color: #111 !important; }
+    .imsafe-letter { font-size: 6pt !important; color: #003366 !important; }
+    .imsafe-check-box { width: 10px !important; height: 10px !important; border-color: #555 !important; }
+    .imsafe-icon, .imsafe-chevron, .imsafe-status { display: none !important; }
     .rpic-lock-notice { display: none !important; }
     .inflight-items.locked { filter: none !important; opacity: 1 !important; }
 
@@ -740,7 +758,6 @@
 
   /* ── PRINT HEADER ── */
   .print-header { display:none; }
-  .print-footer { display:none; }
 
 
   /* ── CHAR COUNTER ── */
@@ -934,7 +951,6 @@
 
   /* ── PRINT: student mode ── */
   @media print {
-    body.student-mode .print-footer { display:none !important; }
     body.student-mode .sess-tabs,
     body.student-mode .student-actions,
     body.student-mode .student-progress,
@@ -1512,6 +1528,59 @@
       <div class="tooltip-box" id="tip-ack"><div class="tt-title">Pre-Flight Acknowledgments</div><div class="tt-body">These are pilot and crew commitments — not one-time checks, but ongoing responsibilities for the entire flight. Review and acknowledge each before the RPIC gate is unlocked.<ul class="tt-list"><li>VLOS (Visual Line of Sight) must be maintained with your naked eye at all times — no FPV goggles alone</li><li>Land immediately if battery drops below 20% — at 15% the drone may auto-land</li><li>Never cross into restricted airspace even briefly — violations are logged by ATC</li><li>The VO watches the sky, not the screen — divide responsibilities clearly before launch</li><li>Flight area should be inspected on foot before setting up equipment</li></ul><div class="tt-tags"><span class="tt-tag tt-critical">FAA REGULATORY REQUIREMENTS</span><span class="tt-tag tt-safety">CREW MUST CONFIRM BEFORE LAUNCH</span></div></div></div>
     </div>
     <div class="cl-body" id="body-ack">
+      <!-- IMSAFE Pilot Self-Assessment — before RPIC gate -->
+      <div class="imsafe-block" id="imsafe-block" role="group" aria-label="IMSAFE Pilot Self-Assessment">
+        <div class="imsafe-toggle-row" onclick="toggleIMSAFE()" role="button" tabindex="0" aria-expanded="false" aria-controls="imsafe-items" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFE()}">
+          <div class="imsafe-icon">🧠</div>
+          <div class="imsafe-label">Pilot Self-Assessment — IMSAFE</div>
+          <div class="imsafe-status" id="imsafe-status">0 / 6</div>
+          <div class="imsafe-chevron">▼</div>
+        </div>
+        <div class="imsafe-items" id="imsafe-items">
+          <div class="imsafe-item" data-imsafe="I" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleIMSAFEItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFEItem(this)}" aria-label="Illness — I am not suffering from any illness or symptom that might affect my performance">
+            <div class="imsafe-check-box"></div>
+            <div class="imsafe-item-content">
+              <div class="imsafe-letter">I — ILLNESS</div>
+              <div class="imsafe-question">I am not suffering from any illness or symptom of an illness that might affect my performance in flight.</div>
+            </div>
+          </div>
+          <div class="imsafe-item" data-imsafe="M" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleIMSAFEItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFEItem(this)}" aria-label="Medication — I am not taking any prescription or over-the-counter drugs that could impair my judgment">
+            <div class="imsafe-check-box"></div>
+            <div class="imsafe-item-content">
+              <div class="imsafe-letter">M — MEDICATION</div>
+              <div class="imsafe-question">I am not taking any prescription or over-the-counter drugs that could impair my judgment or reaction time.</div>
+            </div>
+          </div>
+          <div class="imsafe-item" data-imsafe="S" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleIMSAFEItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFEItem(this)}" aria-label="Stress — I am not under significant psychological pressure that could distract me during flight">
+            <div class="imsafe-check-box"></div>
+            <div class="imsafe-item-content">
+              <div class="imsafe-letter">S — STRESS</div>
+              <div class="imsafe-question">I am not under significant psychological pressure from job, financial, health, or family problems that could distract me during flight.</div>
+            </div>
+          </div>
+          <div class="imsafe-item" data-imsafe="A" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleIMSAFEItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFEItem(this)}" aria-label="Alcohol — I have not consumed alcohol within the last 8 to 24 hours">
+            <div class="imsafe-check-box"></div>
+            <div class="imsafe-item-content">
+              <div class="imsafe-letter">A — ALCOHOL</div>
+              <div class="imsafe-question">I have not consumed alcohol within the last 8–24 hours and am not under the influence of any impairing substance.</div>
+            </div>
+          </div>
+          <div class="imsafe-item" data-imsafe="F" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleIMSAFEItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFEItem(this)}" aria-label="Fatigue — I have had sufficient sleep and rest to operate safely">
+            <div class="imsafe-check-box"></div>
+            <div class="imsafe-item-content">
+              <div class="imsafe-letter">F — FATIGUE</div>
+              <div class="imsafe-question">I have had sufficient sleep and rest and am not experiencing fatigue that could impair my ability to operate safely.</div>
+            </div>
+          </div>
+          <div class="imsafe-item" data-imsafe="E" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleIMSAFEItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIMSAFEItem(this)}" aria-label="Emotion — I am fully recovered from any extremely upsetting events">
+            <div class="imsafe-check-box"></div>
+            <div class="imsafe-item-content">
+              <div class="imsafe-letter">E — EMOTION</div>
+              <div class="imsafe-question">I am fully recovered from any extremely upsetting events (e.g., loss of a family member, separation) and am emotionally prepared to fly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- RPIC Acknowledgment Gate -->
       <div class="rpic-gate">
         <div class="rpic-ack-row" id="rpic-ack-row" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleRPICAck()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleRPICAck()}" aria-label="Acknowledge RPIC responsibility">
@@ -1785,6 +1854,12 @@ function saveDraft() {
   // Save RPIC gate
   const rpic = document.getElementById('rpic-ack-row');
   draft.rpicAcked = rpic && rpic.classList.contains('acknowledged');
+  // Save IMSAFE items
+  draft.imsafeChecked = [];
+  document.querySelectorAll('.imsafe-item.checked').forEach(el => {
+    if (el.dataset.imsafe) draft.imsafeChecked.push(el.dataset.imsafe);
+  });
+  draft.imsafeExpanded = document.getElementById('imsafe-block')?.classList.contains('expanded') || false;
 
   try {
     localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
@@ -1831,6 +1906,17 @@ function loadDraft() {
         items.classList.remove('locked');
       }
     }
+    // Restore IMSAFE items
+    (draft.imsafeChecked || []).forEach(letter => {
+      const el = document.querySelector(`.imsafe-item[data-imsafe="${CSS.escape(letter)}"]`);
+      if (el) { el.classList.add('checked'); el.setAttribute('aria-checked','true'); }
+    });
+    if (draft.imsafeExpanded) {
+      const block = document.getElementById('imsafe-block');
+      const toggle = block?.querySelector('.imsafe-toggle-row');
+      if (block) { block.classList.add('expanded'); toggle?.setAttribute('aria-expanded','true'); }
+    }
+    updateIMSAFEStatus();
     updateProgress();
     const badge = document.getElementById('draft-badge');
     if (badge) badge.classList.add('show');
@@ -2102,6 +2188,23 @@ function saveSessions() {
 
 // ── CHECKLIST DEFINITIONS (PDF-matched, generic) ────────────────────────────────
 const SCL_DEFS = [
+  { id:'imsafe', icon:'🧠', title:'IMSAFE — Pilot Self-Assessment',
+    whyTitle:'Why IMSAFE matters',
+    why:'IMSAFE is the FAA-recognized pilot self-assessment framework used in both manned and unmanned aviation. It exists because most aviation accidents involve human factors — not equipment failure. A drone operated by an impaired, medicated, fatigued, or distracted pilot is an unsafe aircraft regardless of the condition of the equipment. Complete this before anything else. If you cannot check all six items, the mission does not fly.',
+    items:[
+      { id:'im1', label:'I — Illness: I am not suffering from any illness or symptom that could affect my performance in flight.',
+        why:'Even a minor illness — headache, nausea, congestion — can degrade your attention, reaction time, and decision-making. When in doubt, do not fly.' },
+      { id:'im2', label:'M — Medication: I am not taking any prescription or over-the-counter drugs that could impair my judgment or reaction time.',
+        why:'Many common medications — antihistamines, cold remedies, anxiety medications — list drowsiness or impaired coordination as side effects. Check the label. If it warns against operating machinery, it applies to drones.' },
+      { id:'im3', label:'S — Stress: I am not under significant psychological pressure that could distract me during flight.',
+        why:'Stress from work, finances, relationships, or personal conflict narrows your attention and reduces situational awareness. A distracted pilot misses hazards. Acknowledge your mental state honestly before you fly.' },
+      { id:'im4', label:'A — Alcohol: I have not consumed alcohol within the last 8–24 hours.',
+        why:'FAA regulations prohibit acting as a crewmember within 8 hours of consuming alcohol or while under the influence. The practical standard is higher — 24 hours is the professional benchmark. Zero tolerance on training days.' },
+      { id:'im5', label:'F — Fatigue: I have had sufficient sleep and rest and am not too tired to operate safely.',
+        why:'Fatigue is one of the most common and underestimated human factors in aviation incidents. Tired pilots miss alerts, react slowly, and make poor go/no-go decisions. If you slept fewer than 6 hours, flag it.' },
+      { id:'im6', label:'E — Emotion: I am fully recovered from any extremely upsetting events and am emotionally prepared to fly.',
+        why:'Grief, anger, or emotional shock following a major life event can dominate your attention even when you believe you are focused. Professional pilots recognize this and stand down when their emotional state is compromised.' },
+    ]},
   { id:'ppe', icon:'🦺', title:'PPE',
     whyTitle:'Why PPE matters',
     why:'Drones are powerful tools operating in public spaces. PPE signals professionalism, satisfies site safety requirements at colleges and job sites, and protects you if something goes wrong. Employers expect pilots to arrive PPE-ready without being asked.',
@@ -2753,8 +2856,9 @@ function toggleCheck(el) { el.classList.toggle('checked'); el.setAttribute('aria
 function updateProgress() {
   let total = 0, done = 0;
   CL_SECTIONS.forEach(id => {
-    const items = document.querySelectorAll(`#body-${id} .check-item`);
-    const checked = document.querySelectorAll(`#body-${id} .check-item.checked`);
+    // Exclude .imsafe-item elements — they are a separate go/no-go gate, not progress items
+    const items = document.querySelectorAll(`#body-${id} .check-item:not(.imsafe-item)`);
+    const checked = document.querySelectorAll(`#body-${id} .check-item.checked:not(.imsafe-item)`);
     const checkedCount = Math.min(checked.length, items.length);
     const pct = items.length ? Math.round(checkedCount / items.length * 100) : 0;
     document.getElementById('cnt-' + id).textContent = `${checkedCount}/${items.length}`;
@@ -2808,6 +2912,11 @@ function captureMission() {
     insProvider: gf('f-ins-provider'), insPolicy: gf('f-ins-policy'),
     insStart: gf('f-ins-start'), insEnd: gf('f-ins-end'),
     insNotes: gf('f-ins-notes'),
+    imsafe: (function() {
+      const checked = [];
+      document.querySelectorAll('.imsafe-item.checked').forEach(el => { if (el.dataset.imsafe) checked.push(el.dataset.imsafe); });
+      return { completed: checked, allClear: checked.length === 6 };
+    })(),
     regNumber: gf('f-regnumber'), remoteId: gr('remoteid'),
     flightStart: gf('f-start'), flightEnd: gf('f-end'), duration: gf('f-duration'),
     maxAltitude: gf('f-altitude'),
@@ -2962,6 +3071,16 @@ async function resetAll(silent) {
   if (rpicRow) rpicRow.classList.remove('acknowledged');
   const inflightItems = document.getElementById('inflight-items');
   if (inflightItems) inflightItems.classList.add('locked');
+  // Reset IMSAFE items
+  document.querySelectorAll('.imsafe-item').forEach(el => {
+    el.classList.remove('checked');
+    el.setAttribute('aria-checked','false');
+  });
+  const imsafeBlock = document.getElementById('imsafe-block');
+  if (imsafeBlock) imsafeBlock.classList.remove('expanded');
+  const imsafeToggle = imsafeBlock?.querySelector('.imsafe-toggle-row');
+  if (imsafeToggle) imsafeToggle.setAttribute('aria-expanded','false');
+  updateIMSAFEStatus();
   document.getElementById('f-incident-toggle').checked = false;
   document.getElementById('incident-block').classList.remove('show');
   document.getElementById('f-incident-desc').value = '';
@@ -3521,6 +3640,32 @@ function toggleRPICAck() {
 }
 
 
+// ─── IMSAFE SELF-ASSESSMENT ───────────────────────────────────────────────────
+function toggleIMSAFE() {
+  const block = document.getElementById('imsafe-block');
+  const items = document.getElementById('imsafe-items');
+  const toggle = block.querySelector('.imsafe-toggle-row');
+  const isExpanded = block.classList.toggle('expanded');
+  toggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+}
+
+function toggleIMSAFEItem(el) {
+  const isChecked = el.classList.toggle('checked');
+  el.setAttribute('aria-checked', isChecked ? 'true' : 'false');
+  updateIMSAFEStatus();
+  scheduleDraftSave();
+}
+
+function updateIMSAFEStatus() {
+  const items = document.querySelectorAll('.imsafe-item');
+  const checked = document.querySelectorAll('.imsafe-item.checked').length;
+  const statusEl = document.getElementById('imsafe-status');
+  if (statusEl) {
+    statusEl.textContent = checked + ' / ' + items.length;
+    statusEl.className = 'imsafe-status' + (checked === items.length ? ' all-clear' : '');
+  }
+}
+
 // ─── ACCESSIBILITY ────────────────────────────────────────────────────────────
 let currentFontSize = 0; // -1 sm, 0 normal, 1 lg, 2 xl
 
@@ -3948,13 +4093,6 @@ if ('serviceWorker' in navigator) {
     <button class="btn btn-secondary" onclick="closeBriefing()" style="flex:1;">✕ Close</button>
     <div style="width:100%;font-size:0.72rem;color:#888;font-family:'Share Tech Mono',monospace;text-align:center;padding-top:2px;">💡 Return after the flight to fill in Flight Record fields, then reprint for a complete record.</div>
   </div>
-</div>
-
-
-<!-- PRINT FOOTER — hidden on screen, visible on print only -->
-<div class="print-footer" aria-hidden="true">
-  <span class="print-footer-left">AguirreTech Drone Mission Checklist</span>
-  <span class="print-footer-right">aguirretech.github.io/drone-checklist</span>
 </div>
 
 <div class="version-badge" aria-hidden="true">v1.0</div>
